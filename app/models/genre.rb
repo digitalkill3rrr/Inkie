@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
-  # has_many :comics
+  # belongs_to :comics
 end

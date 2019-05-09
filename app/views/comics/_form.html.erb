@@ -29,7 +29,7 @@
   <div class="field">
     <%= form.label :genre %>
     <%#= form.text_field :genre %>
-    <%= select("comic", "genre", Genre.all.collect {|g| [ g.genre, g.id ] }, { include_blank: true }) %>
+    <%= select("comic", "genre", Genre.all.collect {|g| [ g.genre, g.id ] }) %>
   </div>
 
   <div class="actions">
