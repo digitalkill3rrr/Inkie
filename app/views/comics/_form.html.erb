@@ -22,14 +22,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%#= form.label :user_id %>
+    <%#= form.number_field :user_id %>
   </div>
 
   <div class="field">
     <%= form.label :genre %>
     <%#= form.text_field :genre %>
-    <%= select("comic", "genre", Genre.all.collect {|g| [ g.genre, g.id ] }) %>
+    <%= select("comic", "genre", Genre.all.collect {|g| [ g.name, g.id ] }) %>
   </div>
 
   <div class="actions">

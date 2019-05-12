@@ -18,17 +18,17 @@ end
 
 Genre.create([
   {
-    genre: "horror"
+    name: "horror"
   },{
-    genre: "sci-fi"
+    name: "sci-fi"
   },{
-    genre: "adventure"
+    name: "adventure"
   },{
-    genre: "Marvel"
+    name: "Marvel"
   },{
-    genre: "DC"
+    name: "DC"
   },{
-    genre: "other"
+    name: "other"
   }
 ])
 
@@ -41,32 +41,26 @@ Comic.create([
   {
     title: "Horrific",
     genre: random_genre_id,
-    # creator: "Šimon Kováč",
     cover: upload_fake_cover
   },{
     title: "DSII: Into the Light",
     genre: random_genre_id,
-    # creator: "Brian K. Vaughan",
     cover: upload_fake_cover
   },{
     title: "Invincible Iron Man",
     genre: random_genre_id,
-    # creator: "Thitiwat Shimma",
     cover: upload_fake_cover
   },{
     title: "Heavy Metal",
     genre: random_genre_id,
-    # creator: "Jel Chibuzo",
     cover: upload_fake_cover
   },{
     title: "Children of the Moon",
     genre: random_genre_id,
-    # creator: "Carlota Monteiro",
     cover: upload_fake_cover
   },{
     title: "Saga",
     genre: random_genre_id,
-    # creator: "Rebecca Holder",
     cover: upload_fake_cover
   }
 ])
