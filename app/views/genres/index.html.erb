@@ -13,10 +13,17 @@
   <tbody>
     <% @genres.each do |genre| %>
       <tr>
-        <td><%= genre.title %></td>
-        <td><%= link_to 'Show', genre %></td>
-        <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
-        <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to genre.title, genre %></td>
+        <td>
+          <% if can? :update, Genre %>
+            <%= link_to 'Edit', edit_genre_path(genre) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can? :destroy, Genre %>
+            <%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +31,6 @@
 
 <br>
 
-<%= link_to 'New Genre', new_genre_path %>
+<% if can? :create, Genre %>
+  <%= link_to 'New Genre', new_genre_path %>
+<% end %>
