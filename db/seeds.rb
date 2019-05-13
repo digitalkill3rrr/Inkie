@@ -16,57 +16,87 @@ def upload_fake_cover
   uploader
 end
 
-Genre.create([
+@genres = [
   {
-    genre: "horror"
+    title: "horror"
   },{
-    genre: "sci-fi"
+    title: "sci-fi"
   },{
-    genre: "adventure"
+    title: "adventure"
   },{
-    genre: "Marvel"
+    title: "Marvel"
   },{
-    genre: "DC"
+    title: "DC"
   },{
-    genre: "other"
+    title: "other"
   }
-])
+]
 
-def random_genre_id
-  Genre.offset(rand(Genre.count)).first.id
+@genres.each do |genre|
+  g = Genre.new(
+    title: genre[:title]
+  )
+
+  if g.save
+    puts "Genre #{g.title} created"
+  else
+    puts "Genre #{g.title} not created"
+  end
 end
 
 
-Comic.create([
+def random_genre_id
+  Genre.all.sample.id
+  # p Genre.all.sample.id
+end
+
+
+@comics = [
   {
     title: "Horrific",
-    genre: random_genre_id,
+    genre_id: random_genre_id,
     # creator: "Šimon Kováč",
     cover: upload_fake_cover
   },{
     title: "DSII: Into the Light",
-    genre: random_genre_id,
+    genre_id: random_genre_id,
     # creator: "Brian K. Vaughan",
     cover: upload_fake_cover
   },{
     title: "Invincible Iron Man",
-    genre: random_genre_id,
+    genre_id: random_genre_id,
     # creator: "Thitiwat Shimma",
     cover: upload_fake_cover
   },{
     title: "Heavy Metal",
-    genre: random_genre_id,
+    genre_id: random_genre_id,
     # creator: "Jel Chibuzo",
     cover: upload_fake_cover
   },{
     title: "Children of the Moon",
-    genre: random_genre_id,
+    genre_id: random_genre_id,
     # creator: "Carlota Monteiro",
     cover: upload_fake_cover
   },{
     title: "Saga",
-    genre: random_genre_id,
+    genre_id: random_genre_id,
     # creator: "Rebecca Holder",
     cover: upload_fake_cover
   }
-])
+]
+
+def create_comic(comic)
+  Comic.create(
+    # genre: genre[:genre]\
+    title: comic[:title],
+    genre_id: comic[:genre_id],
+    # creator: "Rebecca Holder",
+    cover: comic[:cover]
+  )
+end
+
+@comics.each do |comic|
+  comic = create_comic(comic)
+  puts "Comic #{comic.title} created"
+  # puts "Comic genre = #{comic.genre}"
+end
