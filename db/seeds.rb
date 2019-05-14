@@ -18,11 +18,11 @@ Rake::Task['db:migrate'].invoke
     nickname: 'Admin Rules'
   },{
     email: 'user1@user.com',
-    role:  'user',
+    role:  'logged user',
     nickname: 'Regular Mfk'
   },{
     email: 'user2@user.com',
-    role:  'user',
+    role:  'logged user',
     nickname: 'Us3r Userovich'
   }
 ]

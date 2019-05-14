@@ -9,9 +9,10 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.role == 'admin'
         can :manage, :all
-      elsif user.role == 'user'
+      elsif user.role == 'logged user'
         can :manage, :all
         cannot [:create, :update, :destroy], Genre
+        cannot [:create, :update, :destroy], User
         # cannot :index, User
       else
         can :read, :all
