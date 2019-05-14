@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to comic.title, comic %></td>
         <td><%#= comic.cover %></td>
-        <td><%= comic.user.email %></td>
+        <td><%= comic.user.nickname %></td>
         <td><%= comic.genre.title %></td>
         <td>
           <% if can? :update, Comic %>

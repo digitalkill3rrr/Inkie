@@ -12,10 +12,10 @@ class Ability
       elsif user.role == 'user'
         can :manage, :all
         cannot [:create, :update, :destroy], Genre
-        cannot :index, User
+        # cannot :index, User
       else
         can :read, :all
-        cannot :index, User
+        # cannot :index, User
       end
     #
     # The first argument to `can` is the action you are giving the user

@@ -14,13 +14,16 @@ Rake::Task['db:migrate'].invoke
 @users = [
   {
     email: 'admin@admin.com',
-    role:  'admin'
+    role:  'admin',
+    nickname: 'Admin Rules'
   },{
     email: 'user1@user.com',
-    role:  'user'
+    role:  'user',
+    nickname: 'Regular Mfk'
   },{
     email: 'user2@user.com',
-    role:  'user'
+    role:  'user',
+    nickname: 'Us3r Userovich'
   }
 ]
 
@@ -30,6 +33,7 @@ def create_users(user)
   User.create(
     email:                 user[:email],
     role:                  user[:role],
+    nickname:              user[:nickname],
     password:              password,
     password_confirmation: password
   )
