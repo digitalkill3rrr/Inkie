@@ -6,7 +6,7 @@ class ComicsController < ApplicationController
   # GET /comics
   # GET /comics.json
   def index
-    # @comics = Comic.all
+    @comics = Comic.all
 
     # Shows comics of current_user only
     # @comics = Comic.where(user_id:current_user.id)
@@ -30,7 +30,7 @@ class ComicsController < ApplicationController
   # POST /comics.json
   def create
     @comic = Comic.new(comic_params)
-    @comic.user_id = current_user.id
+    # @comic.user_id = current_user.id
 
     respond_to do |format|
       if @comic.save

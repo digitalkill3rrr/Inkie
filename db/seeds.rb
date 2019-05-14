@@ -131,6 +131,11 @@ end
 
 @comics.each do |comic|
   comic = create_comic(comic)
-  puts "Comic #{comic.title} created"
+  if comic.save
+    puts "Comic #{comic.title} created"
+  else
+    puts "Comic #{comic.title} not created"
+  end
+  # puts "Comic #{comic.title} created"
   # puts "Comic genre = #{comic.genre}"
 end
