@@ -10,12 +10,38 @@ Rake::Task['db:create'].invoke
 Rake::Task['db:migrate'].invoke
 
 
-def upload_fake_cover
-  uploader = CoverUploader.new(Comic.new, :cover)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/tasks/covers', '*')).sample))
-  uploader
+# Create users
+@users = [
+  {
+    email: 'admin@admin.com',
+    role:  'admin'
+  },{
+    email: 'user1@user.com',
+    role:  'user'
+  },{
+    email: 'user2@user.com',
+    role:  'user'
+  }
+]
+
+def create_users(user)
+  password = 'testtest'
+
+  User.create(
+    email:                 user[:email],
+    role:                  user[:role],
+    password:              password,
+    password_confirmation: password
+  )
 end
 
+@users.each do |user|
+  u = create_users(user)
+  puts "User with #{u.email} created"
+end
+
+
+# Create genres
 @genres = [
   {
     title: "horror"
@@ -45,53 +71,55 @@ end
 end
 
 
-def random_genre_id
-  Genre.all.sample.id
-  # p Genre.all.sample.id
+# Fake covers
+def upload_fake_cover
+  uploader = CoverUploader.new(Comic.new, :cover)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/tasks/covers', '*')).sample))
+  uploader
 end
 
 
+# Create comics
 @comics = [
   {
-    title: "Horrific",
-    genre_id: random_genre_id,
-    # creator: "Šimon Kováč",
-    cover: upload_fake_cover
+    title:    "Horrific",
+    genre_id: Genre.all.sample.id,
+    cover:    upload_fake_cover,
+    user_id:  User.all.sample.id
   },{
-    title: "DSII: Into the Light",
-    genre_id: random_genre_id,
-    # creator: "Brian K. Vaughan",
-    cover: upload_fake_cover
+    title:    "DSII: Into the Light",
+    genre_id: Genre.all.sample.id,
+    cover:    upload_fake_cover,
+    user_id:  User.all.sample.id
   },{
-    title: "Invincible Iron Man",
-    genre_id: random_genre_id,
-    # creator: "Thitiwat Shimma",
-    cover: upload_fake_cover
+    title:    "Invincible Iron Man",
+    genre_id: Genre.all.sample.id,
+    cover:    upload_fake_cover,
+    user_id:  User.all.sample.id
   },{
-    title: "Heavy Metal",
-    genre_id: random_genre_id,
-    # creator: "Jel Chibuzo",
-    cover: upload_fake_cover
+    title:    "Heavy Metal",
+    genre_id: Genre.all.sample.id,
+    cover:    upload_fake_cover,
+    user_id:  User.all.sample.id
   },{
-    title: "Children of the Moon",
-    genre_id: random_genre_id,
-    # creator: "Carlota Monteiro",
-    cover: upload_fake_cover
+    title:    "Children of the Moon",
+    genre_id: Genre.all.sample.id,
+    cover:    upload_fake_cover,
+    user_id:  User.all.sample.id
   },{
-    title: "Saga",
-    genre_id: random_genre_id,
-    # creator: "Rebecca Holder",
-    cover: upload_fake_cover
+    title:    "Saga",
+    genre_id: Genre.all.sample.id,
+    cover:    upload_fake_cover,
+    user_id:  User.all.sample.id
   }
 ]
 
 def create_comic(comic)
   Comic.create(
-    # genre: genre[:genre]\
-    title: comic[:title],
+    title:    comic[:title],
     genre_id: comic[:genre_id],
-    # creator: "Rebecca Holder",
-    cover: comic[:cover]
+    cover:    comic[:cover],
+    user_id:  comic[:user_id]
   )
 end
 

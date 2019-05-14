@@ -1,6 +1,8 @@
 class Comic < ApplicationRecord
+  belongs_to :genre
+  belongs_to :user
+
   mount_uploader :cover, CoverUploader
 
-  validates :genre, presence: true
-  belongs_to :genre
+  validates :user_id, :cover, :title, presence: true
 end
