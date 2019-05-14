@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :cover %>
+    <%= form.file_field :cover %>
   </div>
 
   <div class="field">
-    <%= form.label :cover %>
-    <%= form.file_field :cover %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
@@ -27,9 +27,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :genre %>
+    <%= form.label :genre_id %>
     <%#= form.text_field :genre %>
-    <%= select("comic", "genre", Genre.all.collect {|g| [ g.name, g.id ] }) %>
+    <%= select("comic", "genre_id", Genre.all.collect {|g| [ g.title, g.id ] }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
   </div>
 
   <div class="actions">

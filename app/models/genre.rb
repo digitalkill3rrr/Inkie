@@ -1,4 +1,5 @@
 class Genre < ApplicationRecord
-  # belongs_to :comics
-  # has_many :comics
+  has_many :comics
+
+  # validates :title, presence: true
 end
