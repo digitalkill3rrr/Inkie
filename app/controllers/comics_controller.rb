@@ -1,11 +1,15 @@
 class ComicsController < ApplicationController
   load_and_authorize_resource
+  # before_action :authenticate_user!
   before_action :set_comic, only: [:show, :edit, :update, :destroy]
 
   # GET /comics
   # GET /comics.json
   def index
-    @comics = Comic.all
+    # @comics = Comic.all
+
+    # Shows comics of current_user only
+    # @comics = Comic.where(user_id:current_user.id)
   end
 
   # GET /comics/1
@@ -26,6 +30,7 @@ class ComicsController < ApplicationController
   # POST /comics.json
   def create
     @comic = Comic.new(comic_params)
+    @comic.user_id = current_user.id
 
     respond_to do |format|
       if @comic.save
@@ -70,6 +75,6 @@ class ComicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comic_params
-      params.require(:comic).permit(:title, :cover, :user_id, :genre_id)
+      params.require(:comic).permit(:title, :cover, :user_id, :genre_id, :description)
     end
 end

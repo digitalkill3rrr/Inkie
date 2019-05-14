@@ -82,6 +82,8 @@ def upload_fake_cover
   uploader
 end
 
+# Create descriptions
+@descriptions = []
 
 # Create comics
 @comics = [

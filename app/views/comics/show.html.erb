@@ -9,10 +9,6 @@
   <%= @comic.title %>
 </p>
 
-<!-- <p>
-  <strong>Cover:</strong>
-  <%#= @comic.cover %>
-</p> -->
 <p>
   <strong>Creator:</strong>
   <%= @comic.user.nickname %>
@@ -23,5 +19,13 @@
   <%= @comic.genre.title %>
 </p>
 
-<%= link_to 'Edit', edit_comic_path(@comic) %> |
+<p>
+  <strong>Description:</strong>
+  <%= @comic.description %>
+</p>
+
+<% if can? :update, Comic %>
+  <%= link_to 'Edit', edit_comic_path(@comic) %>
+<% end %>
+
 <%= link_to 'Back', comics_path %>
