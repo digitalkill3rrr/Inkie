@@ -1,0 +1,6 @@
+<h1>Editing Story</h1>
+
+<%= render 'form', story: @story %>
+
+<%= link_to 'Show', comic_story_path(@story.id) %> |
+<%= link_to 'Back', comic_stories_path %>
