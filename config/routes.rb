@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   get 'users/index'
+
   devise_for :users
   resources :genres
-  resources :comics
+  resources :comics do
+    resources :stories
+  end
 
   get 'comics/index'
 

@@ -24,6 +24,9 @@
   <%= @comic.description %>
 </p>
 
+
+<%= link_to 'Read comic',comic_story_path(0) %>
+
 <% if can? :update, Comic %>
   <%= link_to 'Edit', edit_comic_path(@comic) %>
 <% end %>
