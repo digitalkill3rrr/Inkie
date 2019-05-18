@@ -1,0 +1,21 @@
+.T_ComicsViewerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  // padding-right: 80px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: .1s ease-in;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
