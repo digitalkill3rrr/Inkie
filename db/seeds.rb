@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Rake::Task['db:drop'].invoke
 Rake::Task['db:create'].invoke
 Rake::Task['db:migrate'].invoke
@@ -83,7 +76,14 @@ def upload_fake_cover
 end
 
 # Create descriptions
-@descriptions = []
+@descriptions = [
+  "New Episodes every Friday. From the deepest, darkest, corners of the world, Darkbox brings you Silent Horror Z.",
+  "Max is your average high school student trying to get through life as himself. He may not be your average boy, being assigned female at birth, but he's set on being the man he is. Though, Trying to come out to his parents is one thing, his mom coming out as a Magical Girl is another. Now it is Max responsibility to take on the family tradition of becoming the next Magical Girl and save humanity.",
+  "Once every ten years, a random girl awakens as a witch with immeasurable power that is destined to destroy the world. To prevent this calamity from happening, four sacred tournaments are held one year prior to her birth to train and select a party of heroes strong enough to slay her.",
+  "Milo always dreamt of owning a big dog. They’re protective, cuddly, playful. Som the Samoyed, on the other paw, is anything but. She barks all night, sheds hair bombs, steals the Wi-Fi password, and might just be a supervillain?! Som the EXTREME Samoyed is un-leashed!",
+  "Those who die mysterious deaths go on to become legends. All according to plan. Morality and mortality become intermixed in this action packed thriller that demands the reader to answer the ultimate question: what exactly is worth dying for?",
+  "Is this a comic or a game? When the players are not around, the NPCs start to worry. Join a band of silly NPCs (non-playable characters) as they attempt to free their cursed village and find their creator!"
+].sample
 
 # Create comics
 @comics = [
@@ -91,32 +91,38 @@ end
     title:    "Horrific",
     genre_id: Genre.all.sample.id,
     cover:    upload_fake_cover,
-    user_id:  User.all.sample.id
+    user_id:  User.all.sample.id,
+    description: @descriptions
   },{
     title:    "DSII: Into the Light",
     genre_id: Genre.all.sample.id,
     cover:    upload_fake_cover,
-    user_id:  User.all.sample.id
+    user_id:  User.all.sample.id,
+    description: @descriptions
   },{
     title:    "Invincible Iron Man",
     genre_id: Genre.all.sample.id,
     cover:    upload_fake_cover,
-    user_id:  User.all.sample.id
+    user_id:  User.all.sample.id,
+    description: @descriptions
   },{
     title:    "Heavy Metal",
     genre_id: Genre.all.sample.id,
     cover:    upload_fake_cover,
-    user_id:  User.all.sample.id
+    user_id:  User.all.sample.id,
+    description: @descriptions
   },{
     title:    "Children of the Moon",
     genre_id: Genre.all.sample.id,
     cover:    upload_fake_cover,
-    user_id:  User.all.sample.id
+    user_id:  User.all.sample.id,
+    description: @descriptions
   },{
     title:    "Saga",
     genre_id: Genre.all.sample.id,
     cover:    upload_fake_cover,
-    user_id:  User.all.sample.id
+    user_id:  User.all.sample.id,
+    description: @descriptions
   }
 ]
 
@@ -125,7 +131,8 @@ def create_comic(comic)
     title:    comic[:title],
     genre_id: comic[:genre_id],
     cover:    comic[:cover],
-    user_id:  comic[:user_id]
+    user_id:  comic[:user_id],
+    description: comic[:description]
   )
 end
 

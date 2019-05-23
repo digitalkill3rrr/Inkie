@@ -9,6 +9,7 @@
       <!-- <th>Cover</th> -->
       <th>Creator</th>
       <th>Genre</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%#= comic.cover %></td>
         <td><%= comic.user.nickname %></td>
         <td><%= comic.genre.title %></td>
+        <td><%= comic.description %></td>
         <td>
           <% if can? :update, Comic %>
             <%= link_to 'Edit', edit_comic_path(comic) %>
