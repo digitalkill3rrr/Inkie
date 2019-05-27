@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<table>
+  <tbody>
+    <% @genre.comics.all.each do |c| %>
+      <tr>
+        <td><%= c.title %></td>
+        <td><%= c.description %></td>
+      </tr>
+    <% end %>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @genre.title %>
-</p>
+    <h1><%= @genre.title %></h1>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_genre_path(@genre) %> |
+<br>
+
+
+<%#= link_to 'Edit', edit_genre_path(@genre) %>
 <%= link_to 'Back', genres_path %>

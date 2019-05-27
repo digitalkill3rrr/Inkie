@@ -22,13 +22,7 @@
   </div>
 
   <div class="field">
-    <%#= form.label :user_id %>
-    <%#= form.number_field :user_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :genre_id %>
-    <%#= form.text_field :genre %>
     <%= select("comic", "genre_id", Genre.all.collect {|g| [ g.title, g.id ] }) %>
   </div>
 
