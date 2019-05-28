@@ -30,7 +30,7 @@ class ComicsController < ApplicationController
   # POST /comics.json
   def create
     @comic = Comic.new(comic_params)
-    # @comic.user_id = current_user.id
+    @comic.user_id = current_user.id
 
     respond_to do |format|
       if @comic.save

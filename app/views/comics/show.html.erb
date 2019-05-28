@@ -1,7 +1,7 @@
-<p id="notice"><%= notice %></p>
+<br>
 
 <div>
-  <%= image_tag(@comic.cover.url) if @comic.cover? %>
+  <%= image_tag(@comic.cover.url, width: 300) if @comic.cover? %>
 </div>
 
 <p>
@@ -26,6 +26,8 @@
 
 
 <%= link_to 'Read comic',comic_story_path(0) %>
+
+<br>
 
 <% if can? :update, Comic %>
   <%= link_to 'Edit', edit_comic_path(@comic) %>
