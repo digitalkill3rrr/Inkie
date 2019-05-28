@@ -16,17 +16,17 @@
     <% @comics.each do |comic| %>
       <tr>
         <td><%= link_to comic.title, comic %></td>
-        <td><%#= comic.cover %></td>
+        <td><%= image_tag comic.cover.url, width: 100 %></td>
         <td><%= comic.user.nickname %></td>
         <td><%= comic.genre.title %></td>
         <td><%= comic.description %></td>
         <td>
-          <% if can? :update, Comic %>
+          <% if can? :update, comic %>
             <%= link_to 'Edit', edit_comic_path(comic) %>
           <% end %>
         </td>
         <td>
-          <% if can? :destroy, Comic %>
+          <% if can? :destroy, comic %>
             <%= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </td>
