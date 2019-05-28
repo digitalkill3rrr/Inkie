@@ -1,22 +1,38 @@
-<h1>Profile</h1>
+<h1>My comics</h1>
 
 <table>
   <thead>
     <tr>
-      <th>My comics</th>
+      <!-- <th>My comics</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @user.comics.all.each do |c| %>
+    <% @user.comics.each do |c| %>
       <tr>
         <td><%= c.title %></td>
-        <td><%#= c.cover %></td>
+        <td><%= image_tag c.cover.url, width: 100 %></td>
         <td><%= c.description %></td>
+
+        <td>
+          <% if can? :update, c %>
+            <%= link_to 'Edit', edit_comic_path(c) %>
+          <% end %>
+        </td>
+
+        <td>
+          <% if can? :destroy, c %>
+            <%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+<% if can? :create, Comic %>
+  <%= link_to 'New Comic', new_comic_path %>
+<% end %>
