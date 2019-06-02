@@ -1,0 +1,29 @@
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+
+  // width: 140px;
+  height: 48px;
+  padding: 16px 32px;
+  border-radius: 28px;
+
+  background-color: rgba(255,255,255,.8);
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.08);
+
+  font-family: AvenirNext-Medium;
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: 0;
+
+  transition: .1s ease-in-out;
+
+  &:hover{
+    box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.2);
+    transform: scale(1.03);
+  }
+}
