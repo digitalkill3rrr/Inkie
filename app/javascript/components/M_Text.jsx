@@ -17,6 +17,15 @@ export default class M_Text extends React.Component {
 
     let text
 
+    if (this.props.text.speed) {
+      let translateX = this.props.translateX * this.props.image.speed
+      styles.transform = 'translateX(' + translateX + 'px)'
+    }
+
+    if (this.props.text.color) {
+      styles.color = '#' + this.props.text.color
+    }
+
     if (this.props.text.link) {
       text = <a href={this.props.text.link} className="M_Text" style={ styles }>{ this.props.text.text }</a>
     } else {

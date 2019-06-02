@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 import M_Image from '../components/M_Image'
 import M_Text from '../components/M_Text'
+import M_Speech from '../components/M_Speech'
 
 export default class O_Frame extends React.Component {
   constructor(props, context) {
@@ -22,6 +23,7 @@ export default class O_Frame extends React.Component {
               key={ i }
               index={ i }
               objects={ this.props.objects[i] }
+              translateX={ this.props.translateX }
             />
           )
         }
@@ -32,6 +34,18 @@ export default class O_Frame extends React.Component {
               key={ i }
               index={ i }
               objects={ this.props.objects[i] }
+              translateX={ this.props.translateX }
+            />
+          )
+        }
+        if (object.type == "speech") {
+          objects.push(
+            <M_Speech
+              speech={ object }
+              key={ i }
+              index={ i }
+              objects={ this.props.objects[i] }
+              translateX={ this.props.translateX }
             />
           )
         }
@@ -43,6 +57,14 @@ export default class O_Frame extends React.Component {
       top: this.props.frame.top,
       width: this.props.frame.width,
       height: this.props.frame.height
+      }
+
+    if (this.props.frame.background_image) {
+      styles.backgroundImage = "url(" + this.props.frame.background_image + ")"
+    }
+
+    if (this.props.frame.background_color) {
+      styles.backgroundColor = '#' + this.props.frame.background_color
     }
 
     return(

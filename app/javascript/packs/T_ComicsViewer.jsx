@@ -14,18 +14,24 @@ const T_ComicsViewer = props => (
   </div>
 )
 
-fetch('../../../../story1.json')
-  .then((res) => res.json())
-  .then((data) => {
-    console.log('data:', data)
-  })
-
 document.addEventListener('DOMContentLoaded', () => {
-  let frames = JSON.parse(document.getElementById('T_ComicsViewer').dataset.frames)
-  let objects = JSON.parse(document.getElementById('T_ComicsViewer').dataset.objects)
+  let story_id = document.getElementById('T_ComicsViewer').dataset.story
+  let url = '../../../../story' + story_id + '.json'
+  console.log(url);
+
+  let localdata = 'yo'
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, false);
+  xhr.send();
+  localdata = xhr.responseText
+  // let frames = JSON.parse(document.getElementById('T_ComicsViewer').dataset.frames)
+  // let objects = JSON.parse(document.getElementById('T_ComicsViewer').dataset.objects)
+  let story = JSON.parse(localdata).story
+  let frames = JSON.parse(localdata).frames
+  let objects = JSON.parse(localdata).objects
 
   ReactDOM.render(
-    <T_ComicsViewer frames={frames} objects={objects}/>,
+    <T_ComicsViewer frames={frames} objects={objects} story={story}/>,
     document.getElementById('T_ComicsViewer')
   )
 })

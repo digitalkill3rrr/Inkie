@@ -13,7 +13,7 @@ export default class M_Image extends React.Component {
       top: this.props.image.top,
       width: this.props.image.width,
       height: this.props.image.height,
-      backgroundImage: "url(" + this.props.image.background_image + ")",
+      backgroundImage: "url(" + this.props.image.background_image + ")"
     }
 
     let image
@@ -22,6 +22,11 @@ export default class M_Image extends React.Component {
       image = <a href={this.props.image.link} className="M_Image" style={ styles }></a>
     } else {
       image = <div className="M_Image" style={ styles }></div>
+    }
+
+    if (this.props.image.speed) {
+      let translateX = this.props.translateX * this.props.image.speed
+      styles.transform = 'translateX(' + translateX + 'px)'
     }
 
     return(
