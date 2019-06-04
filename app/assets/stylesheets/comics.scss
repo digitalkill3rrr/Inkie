@@ -1,3 +1,85 @@
-// Place all the styles related to the comics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.comic_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  width: 1110px;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  overflow: hidden;
+  background-color: green;
+}
+
+.comic {
+  display: block;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.comic_cover img {
+  display: block;
+  width: 255px;
+  height: 392px;
+  background-image: url();
+  background-repeat: no-repeat;
+  border-radius: 6px;
+}
+
+.comic_title {
+  width: 255px;
+  font-family: AvenirNext-Bold;
+  font-size: 24px;
+  line-height: 31px;
+  padding: 18px 0 10px;
+  color: #131415;
+  letter-spacing: 0;
+  overflow: hidden;
+}
+
+.comic_author {
+  font-family: AvenirNext-Medium;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 0px 0 10px;
+  color: #131415;
+  letter-spacing: 0;
+}
+
+.comic_genre {
+  font-family: AvenirNext-Medium;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 0px 0 10px;
+  color: #131415;
+  opacity: .5;
+  letter-spacing: 0;
+}
+
+.comic_description {
+  font-family: AvenirNext-Medium;
+  font-size: 14px;
+  line-height: 18px;
+  width: 392px;
+  padding: 0px 0 10px;
+  color: #131415;
+  letter-spacing: 0;
+}
+
+.comic_action_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.button {
+  display: block;
+  position: relative;
+  margin-right: 10px;
+}
+
+// #destroy {
+//
+// }

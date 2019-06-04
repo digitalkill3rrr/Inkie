@@ -1,42 +1,38 @@
-<h1>Comics</h1>
+<div class="wrapper">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <!-- <th>Cover</th> -->
-      <th>Creator</th>
-      <th>Genre</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <!-- # NOTE:  Create button -->
+  <!-- <div class="new_comic_button"> -->
+    <%# if can? :create, Comic %>
+      <%#= link_to 'New Comic', new_comic_path %>
+    <%# end %>
+  <!-- </div> -->
 
-  <tbody>
+  <div class="section_title">
+    <h1>Comics</h1>
+  </div>
+
+  <div class="comic_wrapper">
     <% @comics.each do |comic| %>
-      <tr>
-        <td><%= link_to comic.title, comic %></td>
-        <td><%= image_tag comic.cover.url, width: 100 %></td>
-        <td><%= comic.user.nickname %></td>
-        <td><%= comic.genre.title %></td>
-        <td><%= comic.description %></td>
-        <td>
-          <% if can? :update, comic %>
-            <%= link_to 'Edit', edit_comic_path(comic) %>
-          <% end %>
-        </td>
-        <td>
-          <% if can? :destroy, comic %>
-            <%= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
-      </tr>
+      <div class="comic">
+        <div class="comic_cover"><%= image_tag comic.cover.url, width: 100 %></div>
+        <div class="comic_title"><%= link_to comic.title, comic %></div>
+        <div class="comic_author"><%= comic.user.nickname %></div>
+        <div class="comic_genre"><%= link_to comic.genre.title, comic.genre %></div>
+        <!-- <div class="comic_description"><%#= comic.description %></div> -->
+
+        <!-- # NOTE:  Edit & Destroy buttons -->
+        <!-- <div class="button"> -->
+          <%# if can? :update, comic %>
+            <%#= link_to 'Edit', edit_comic_path(comic) %>
+          <%# end %>
+        <!-- </div> -->
+        <!-- <div class="button"> -->
+          <%# if can? :destroy, comic %>
+            <%#= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%# end %>
+        <!-- </div> -->
+
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% if can? :create, Comic %>
-  <%= link_to 'New Comic', new_comic_path %>
-<% end %>
+  </div>
+</div>

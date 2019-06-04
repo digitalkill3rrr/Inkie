@@ -1,28 +1,24 @@
 <br>
 
-<div>
+<div class="comic_cover">
   <%= image_tag(@comic.cover.url, width: 300) if @comic.cover? %>
 </div>
 
-<p>
-  <strong>Title:</strong>
+<div class="comic_title">
   <%= @comic.title %>
-</p>
+</div>
 
-<p>
-  <strong>Creator:</strong>
+<div class="comic_author">
   <%= @comic.user.nickname %>
-</p>
+</div>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @comic.genre.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+<div class="comic_description">
   <%= @comic.description %>
-</p>
+</div>
+
+<div class="comic_genre">
+  <%= @comic.genre.title %>
+</div>
 
 
 <%= link_to 'Read comic',comic_story_path(0) %>
