@@ -7,6 +7,10 @@
     <%# end %>
   <!-- </div> -->
 
+  <div class="header">
+    <h1>Explore the best interactive comics in the world</h1>
+  </div>
+
   <div class="section_title">
     <h1>Comics</h1>
   </div>
@@ -14,7 +18,7 @@
   <div class="comic_wrapper">
     <% @comics.each do |comic| %>
       <div class="comic">
-        <div class="comic_cover"><%= image_tag comic.cover.url, width: 100 %></div>
+        <div class="comic_cover"><%= image_tag comic.cover.url %></div>
         <div class="comic_title"><%= link_to comic.title, comic %></div>
         <div class="comic_author"><%= comic.user.nickname %></div>
         <div class="comic_genre"><%= link_to comic.genre.title, comic.genre %></div>

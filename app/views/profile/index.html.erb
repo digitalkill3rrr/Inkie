@@ -1,14 +1,30 @@
 <div class="wrapper">
+
+  <div class="header">
+    <div id="profile_header">
+      <div class="profile_pic"><%#= image_tag @genre.cover.url %></div>
+      <div class="profile_info">
+        <h1 id="username"><%= current_user.nickname %></h1>
+
+        <div class="logout">
+          <% if user_signed_in? %>
+            <%#= current_user.email %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="section_title">
     <h1>My comics</h1>
   </div>
-
 
   <div class="comic_wrapper">
     <% @user.comics.each do |c| %>
       <div class="comic">
         <div class="comic_cover"><%= image_tag c.cover.url %></div>
-        <div class="comic_title"><%= c.title %></div>
+        <div class="comic_title"><%= link_to c.title, c %></div>
 
         <div class="comic_action_buttons">
           <div id="edit" class="edit_button">

@@ -1,32 +1,31 @@
-<br>
+<div class="wrapper">
 
-<div class="comic_cover">
-  <%= image_tag(@comic.cover.url, width: 300) if @comic.cover? %>
+  <div class="header">
+    <div id="comic_header">
+      <div id="comic_page" class="comic_cover"><%= image_tag @comic.cover.url %></div>
+      <div class="comic_info">
+        <h1 class="comic_title"><%= @comic.title %></h1>
+        <div id="comic_page" class="comic_author"><%= @comic.user.nickname %></div>
+        <div id="comic_page_description" class="comic_description"><%= @comic.description %></div>
+
+        <div class="read_button"><%= link_to 'Read comic',comic_story_path(0) %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comic_wrapper">
+    <!-- <div class="comic_cover"> -->
+      <%#= image_tag(@comic.cover.url) if @comic.cover? %>
+    <!-- </div> -->
+
+    <div class="comic">
+
+      <%# if can? :update, Comic %>
+      <%#= link_to 'Edit', edit_comic_path(@comic) %>
+      <%# end %>
+    </div>
+  </div>
+
+
+  <%#= link_to 'Back', comics_path %>
 </div>
-
-<div class="comic_title">
-  <%= @comic.title %>
-</div>
-
-<div class="comic_author">
-  <%= @comic.user.nickname %>
-</div>
-
-<div class="comic_description">
-  <%= @comic.description %>
-</div>
-
-<div class="comic_genre">
-  <%= @comic.genre.title %>
-</div>
-
-
-<%= link_to 'Read comic',comic_story_path(0) %>
-
-<br>
-
-<% if can? :update, Comic %>
-  <%= link_to 'Edit', edit_comic_path(@comic) %>
-<% end %>
-
-<%= link_to 'Back', comics_path %>

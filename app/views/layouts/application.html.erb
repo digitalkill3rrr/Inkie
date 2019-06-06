@@ -10,28 +10,32 @@
   </head>
 
   <body>
-    <nav class="menu">
-      <div>
-        <%= link_to 'Comics', comics_url %>
-        <%= link_to 'Genres', genres_url %>
-        <%#= link_to 'Users', users_index_url if can? :index, User %>
+    <nav>
+      <div class="navbar">
+        <!-- <a href="" class="logo">Inkie</a> -->
+        <div class="logo"><%= link_to 'Inkie', comics_url %></div>
+        <div class="menu_center">
+          <div class="nav_button"><%= link_to 'Comics', comics_url %></div>
+          <div class="nav_button"><%= link_to 'Genres', genres_url %></div>
+          <%#= link_to 'Users', users_index_url if can? :index, User %>
 
-        <div class="new_comic_button">
-          <% if can? :create, Comic %>
-            <%= link_to 'New Comic', new_comic_path %>
-          <% end %>
+          <div class="new_comic_button">
+            <% if can? :create, Comic %>
+              <%= link_to 'New Comic', new_comic_path %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="profile">
-        <% if user_signed_in? %>
+        <div class="profile">
+          <% if user_signed_in? %>
           <%#= current_user.email %>
           <%= link_to 'Profile', profile_index_url if can? :index, User %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <% else %>
+          <%#= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% else %>
           <%= link_to 'Register', new_user_registration_path %>
           <%= link_to 'Login', new_user_session_path %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </nav>
 

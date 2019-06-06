@@ -1,12 +1,23 @@
 <div class="wrapper">
-  <div class="section_title">
-    <h1>Genres</h1>
+
+  <div class="header">
+    <h1>Comic genres</h1>
+    <p>Comlete collection of comic genres</p>
   </div>
+
+  <!-- <div class="section_title">
+    <h1>Genres</h1>
+  </div> -->
 
       <div class="genre_wrapper">
         <% @genres.each do |genre| %>
-          <div class="genre">
-            <%= link_to genre.title, genre %>
+          <div id="collection" class="genre">
+            <div id="collection_cover" class="genre_cover">
+              <div id="collection_title" class="genre_title"><%= link_to genre.title, genre %></div>
+
+              <%= image_tag genre.cover.url %>
+            </div>
+
               <% if can? :update, Genre %>
                 <%= link_to 'Edit', edit_genre_path(genre) %>
               <% end %>
@@ -21,7 +32,7 @@
 
   <br>
 
-  <% if can? :create, Genre %>
-    <%= link_to 'New Genre', new_genre_path %>
-  <% end %>
+  <%# if can? :create, Genre %>
+    <%#= link_to 'New Genre', new_genre_path %>
+  <%# end %>
 </div>

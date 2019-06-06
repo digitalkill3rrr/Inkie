@@ -1,3 +1,5 @@
+// comics #index
+
 .comic_wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -7,9 +9,8 @@
   align-items: center;
   width: 1110px;
   margin: 0 auto;
-  background-color: #FAFAFA;
   overflow: hidden;
-  background-color: green;
+  // background-color: green;
 }
 
 .comic {
@@ -22,14 +23,12 @@
   display: block;
   width: 255px;
   height: 392px;
-  background-image: url();
-  background-repeat: no-repeat;
   border-radius: 6px;
 }
 
 .comic_title {
   width: 255px;
-  font-family: AvenirNext-Bold;
+  font-family: Avenir-Black;
   font-size: 24px;
   line-height: 31px;
   padding: 18px 0 10px;
@@ -39,7 +38,7 @@
 }
 
 .comic_author {
-  font-family: AvenirNext-Medium;
+  font-family: Avenir-Medium;
   font-size: 18px;
   line-height: 23px;
   padding: 0px 0 10px;
@@ -48,7 +47,7 @@
 }
 
 .comic_genre {
-  font-family: AvenirNext-Medium;
+  font-family: Avenir-Medium;
   text-transform: uppercase;
   font-size: 13px;
   line-height: 18px;
@@ -59,19 +58,23 @@
 }
 
 .comic_description {
-  font-family: AvenirNext-Medium;
+  font-family: Avenir-Roman;
   font-size: 14px;
   line-height: 18px;
-  width: 392px;
-  padding: 0px 0 10px;
+  width: 400px;
+  padding: 20px 0 10px;
   color: #131415;
   letter-spacing: 0;
 }
 
-.comic_action_buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+#profile_description {
+  font-family: Avenir-Roman;
+  font-size: 14px;
+  line-height: 18px;
+  height: 100px;
+  padding: 0px 0 10px;
+  color: #131415;
+  letter-spacing: 0;
 }
 
 .button {
@@ -80,6 +83,55 @@
   margin-right: 10px;
 }
 
-// #destroy {
-//
+
+// comics #show
+
+#comic_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 80px auto;
+}
+
+// .comic_cover {
+//   margin: 0 auto;
+//   padding: 25px 30px;
 // }
+//
+#comic_page  {
+  color: white;
+  text-align: left;
+}
+
+.comic_info {
+  padding: 0 40px;
+}
+
+.comic_info h1 {
+  width: 100vw;
+  color: #fefefe;
+  text-align: left;
+}
+
+#comic_page_description {
+  margin-top: 40px;
+}
+
+.read_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 130px;
+  height: 32px;
+  background-color: #AD52FF;
+  border-radius: 20px;
+
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+}
+
+// comics #edit form

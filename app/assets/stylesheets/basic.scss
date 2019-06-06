@@ -2,6 +2,44 @@ body {
   overflow-x: hidden;
 }
 
+body nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 80px;
+  // margin: 20px auto;
+  background-color: #131415;
+  z-index: 99;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+}
+
+.nav_button, .profile {
+  font-family: Avenir-Roman;
+  font-size: 14px;
+  line-height: 18px;
+  color: #F2F2F2;
+  letter-spacing: 0;
+}
+
+.new_comic_button {
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 18px;
+  color: #AD52FF;
+  letter-spacing: 0;
+}
+
 .wrapper {
   width: 100%;
   height: 100%;
@@ -10,23 +48,83 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: grey;
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
 }
 
 .section_title {
   display: block;
   width: 1110px;
-  font-family: AvenirNext-Bold;
+  font-family: Avenir-Black;
   font-size: 36px;
   line-height: 46px;
   text-align: left;
-  padding: 20px 0 40px;
-  color: #131415;
+  text-transform: capitalize;
+  padding: 80px 0 40px;
+  color: #111111;
   letter-spacing: 0;
-  background-color: cyan;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 370px;
+  padding: 120px 320px;
+  background-color: #131415;
+}
+
+.header h1 {
+  font-family: Avenir-Heavy;
+  font-size: 40px;
+  line-height: 52px;
+  // width: 50%;
+  margin: 0 auto;
+  padding: 50px 0 10px;
+  color: white;
+  letter-spacing: 0;
+  text-align: center;
+  // overflow: hidden;
+
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.header p {
+  font-family: Avenir-Medium;
+  font-size: 21px;
+  line-height: 27px;
+  font-style: oblique;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  background-image: url(logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  font-family: Avenir-Black;
+  font-size: 18px;
+  line-height: 23px;
+  color: white;
+  letter-spacing: 0;
+  padding: 11px 55px;
+}
+
+.menu_center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  margin: 0 80px 0 0;
+}
+
+.profile {
+  display: block;
+  width: 65px;
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="63px" viewBox="0 0 64 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 3 Copy 14</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="69.1812824%" y1="91.6968778%" x2="17.3280411%" y2="5.88458375%" id="linearGradient-1">
+            <stop stop-color="#9A6CFF" offset="0%"></stop>
+            <stop stop-color="#BF38FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M20.5911543,10.0117107 C28.7966741,5.40944082 40.4140145,8.23066531 46.8875838,11.7276786 C53.3611531,15.2246918 59.7148504,20.0725938 62.3127915,27.9456493 C64.9107326,35.8187048 62.3492938,46.0252982 59.1502343,52.9387011 C55.9511749,59.8521039 50.0288047,68.5886265 41.5238815,67.2726522 C35.6606304,66.3654261 34.8632496,61.7638886 31.2610584,58.7339964 C21.0683925,50.1606926 16.4096609,58.9972867 10.994441,51.8736553 C7.67032512,47.5008364 11.1761265,42.2592811 12.0460895,38.5548131 C12.8618593,35.0811103 12.757312,31.4766805 12.286345,26.7592004 C11.3286563,17.1664307 15.9477177,12.6160976 20.5911543,10.0117107 Z" id="path-2"></path>
+        <filter x="-16.7%" y="-8.4%" width="126.0%" height="123.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="-2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.129411765   0 0 0 0 0.137254902   0 0 0 0 0.2  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M26.1300395,8.2681497 C34.0751275,5.77367874 44.2752413,10.8491032 49.7429246,15.4517326 C55.2106078,20.054362 60.4180758,25.8767265 61.885831,33.6876585 C63.3535862,41.4985904 59.8886238,50.3615418 56.2162459,56.0529492 C52.5438681,61.7443566 46.2014099,68.5362135 38.6498671,65.5113728 C33.4438716,63.4260629 33.2387493,59.0144312 30.3180062,55.4540744 C22.053548,45.3797821 16.8437965,52.5330722 12.7414642,44.8128226 C10.2232604,40.0737715 13.985585,35.9888432 15.1891362,32.759329 C16.3177137,29.7309933 16.6278283,26.3861015 16.7312211,21.9371261 C16.9414653,12.8903478 21.6339792,9.67975043 26.1300395,8.2681497 Z" id="path-4"></path>
+        <filter x="-17.9%" y="-8.5%" width="127.8%" height="123.9%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="-2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.129411765   0 0 0 0 0.137254902   0 0 0 0 0.2  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="more-sketches" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tag-Page-2" transform="translate(-73.000000, -39.000000)">
+            <g id="Group-4" transform="translate(70.000000, 31.000000)">
+                <g id="Group-3-Copy-14">
+                    <g id="Path" transform="translate(36.485847, 37.507732) rotate(340.000000) translate(-36.485847, -37.507732) ">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <g id="Path" transform="translate(37.061152, 36.933243) rotate(340.000000) translate(-37.061152, -36.933243) ">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                        <use fill="#000000" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
