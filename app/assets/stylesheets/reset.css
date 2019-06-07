@@ -41,3 +41,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+input:focus {
+  outline-offset: 0;
+}
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}

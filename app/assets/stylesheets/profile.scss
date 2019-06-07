@@ -32,6 +32,15 @@
   border-radius: 6px
 }
 
+
+.comic_action_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100px;
+  flex-wrap: wrap;
+}
+
 .logout {
   font-family: Avenir-Roman;
   font-size: 16px;
@@ -40,15 +49,6 @@
   color: #A0A1A1;
   text-align: left;
   margin: 0 auto;
-}
-
-
-.comic_action_buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100px;
-  flex-wrap: wrap;
 }
 
 #destroy {
