@@ -9,31 +9,49 @@ export default class T_ComicsViewerContainer extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      translateX: 0
+      translateX: 0,
+      width: 0
     }
     _.bindAll(
       this,
-      'handleWheel'
+      'handleWheel',
+      'handleScroll',
+      'handleTouchMove'
     )
   }
 
+  componentDidMount() {
+    this.setState ({
+      width: document.getElementsByClassName('T_ComicsViewerContainer')[0].offsetWidth
+    })
+
+  }
+
   handleWheel(e){
-    // console.log(this.state.translateX);
+    console.log(this.state.width);
     let localDeltaY = this.state.translateX - e.deltaY
 
     if (0 < localDeltaY) {
       this.setState({
         translateX: 0
       })
-    } else if (Math.abs(localDeltaY) > document.getElementsByClassName('T_ComicsViewerContainer')[0].offsetWidth) {
+    } else if (Math.abs(localDeltaY) > this.state.width) {
       this.setState({
-        translateX: - document.getElementsByClassName('T_ComicsViewerContainer')[0].offsetWidth
+        translateX: - this.state.width
       })
     } else {
       this.setState({
         translateX: this.state.translateX - e.deltaY
       })
     }
+  }
+
+  handleScroll(e) {
+    e.preventDefault(),false
+  }
+
+  handleTouchMove(e) {
+    e.preventDefault(),false
   }
 
   render() {
@@ -57,7 +75,8 @@ export default class T_ComicsViewerContainer extends React.Component {
     const styles = {}
 
     if (this.props.story.background_color) {
-      styles.backgroundColor = '#' + this.props.story.background_color
+      styles.backgroundColor = '#' + this.props.story.background_color,
+      styles.height = this.state.width + window.screen.width
     }
 
     // console.log(styles);
@@ -65,6 +84,8 @@ export default class T_ComicsViewerContainer extends React.Component {
     return(
       <div className="T_ComicsViewerContainer"
         onWheel = {(e) => this.handleWheel(e)}
+        onScroll = { this.handleScroll }
+        onTouchMove = { this.handleTouchMove }
         style={ styles }
         >
         <div

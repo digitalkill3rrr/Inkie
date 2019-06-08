@@ -47,7 +47,8 @@
         "width":100,
         "height":20,
         "color":"838409",
-        "text":"Inner Text"
+        "text":"Inner Text",
+        "size":120
       }
     ],
     [
@@ -69,7 +70,7 @@
         "width":300,
         "height":20,
         "background_color":"black",
-        "text":"Make America great again!",
+        "text":"Новый. Может всё. С дисплеем от и до. Это iPad Pro с абсолютно новым дизайном и самыми продвинутыми технологиями Apple.",
         "side":"left",
         "speed":0.1
       }
@@ -79,23 +80,25 @@
         "id":1,
         "type":"text",
         "left":40,
-        "top":40,
+        "top":120,
         "width":300,
         "height":20,
         "background_color":"black",
-        "text":"Story 1.1",
-        "link":"http://localhost:3000/comics/0/stories/2"
+        "text":"Story 1.1 →",
+        "link":"http://localhost:3000/comics/0/stories/2",
+        "size":72
       },
       {
         "id":1,
         "type":"text",
         "left":40,
-        "top":120,
+        "top":190,
         "width":300,
         "height":20,
         "background_color":"black",
-        "text":"Story 1.2",
-        "link":"http://localhost:3000/comics/0/stories/3"
+        "text":"Story 1.2 →",
+        "link":"http://localhost:3000/comics/0/stories/3",
+        "size":72
       },
       {
         "id":0,

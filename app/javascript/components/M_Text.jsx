@@ -12,7 +12,8 @@ export default class M_Text extends React.Component {
       left: this.props.text.left,
       top: this.props.text.top,
       width: this.props.text.width,
-      height: this.props.text.height
+      height: this.props.text.height,
+      fontSize: this.props.text.size
     }
 
     let text

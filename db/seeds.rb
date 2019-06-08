@@ -134,3 +134,34 @@ end
   puts "Comic #{comic.title} created"
   # puts "Comic genre = #{comic.genre}"
 end
+
+# _________
+
+@stories = [
+  {
+    title: 'story1comic1',
+    adress:  'story1comic1',
+    comic_id: '1'
+  },{
+    title: 'story2comic1',
+    adress:  'story2comic1',
+    comic_id: '1'
+  },{
+    title: 'story3comic1',
+    adress:  'story3comic1',
+    comic_id: '1'
+  }
+]
+
+def create_stories(story)
+  Story.create(
+    title:                 story[:title],
+    adress:                story[:adress],
+    comic_id:              story[:comic_id],
+  )
+end
+
+@stories.each do |story|
+  s = create_stories(story)
+  puts "User with #{s.title} created"
+end
