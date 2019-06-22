@@ -7,6 +7,7 @@ class ComicsController < ApplicationController
   # GET /comics.json
   def index
     @comics = Comic.all
+    @genres = Genre.all
 
     # Shows comics of current_user only
     # @comics = Comic.where(user_id:current_user.id)
@@ -37,6 +38,7 @@ class ComicsController < ApplicationController
         format.html { redirect_to @comic, notice: 'Comic was successfully created.' }
         format.json { render :show, status: :created, location: @comic }
       else
+        puts @comic.errors.inspect
         format.html { render :new }
         format.json { render json: @comic.errors, status: :unprocessable_entity }
       end

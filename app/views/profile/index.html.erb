@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="header">
+    <div id="profile_header">
+      <div class="profile_pic"><%= image_tag @user.userpic %></div>
+      <div class="profile_info">
+        <h1 id="username"><%= current_user.nickname %></h1>
+        <div class="logout">
+          <% if user_signed_in? %>
+            <%#= current_user.email %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comic_wrapper">
+    <div class="section_title">
+      <h1>My comics</h1>
+    </div>
+
+    <% @user.comics.each do |c| %>
+      <div class="comic">
+        <div class="comic_cover"><%= image_tag c.cover.url %></div>
+        <div class="comic_title"><%= link_to c.title, c %></div>
+
+        <div class="comic_action_buttons">
+          <div id="edit" class="edit_button">
+            <% if can? :update, c %>
+              <%= link_to 'Edit', edit_comic_path(c) %>
+            <% end %>
+          </div>
+
+          <div id="destroy" class="button">
+            <% if can? :destroy, c %>
+              <%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <!-- # NOTE:  Create button -->
+  <!-- <div id="create" class="button"> -->
+    <%# if can? :create, Comic %>
+      <%#= link_to 'New Comic', new_comic_path %>
+    <%# end %>
+  <!-- </div> -->
+</div>

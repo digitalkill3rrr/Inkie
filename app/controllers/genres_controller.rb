@@ -15,7 +15,6 @@ class GenresController < ApplicationController
 
   # GET /genres/new
   def new
-    @genre = Genre.new
   end
 
   # GET /genres/1/edit
@@ -43,8 +42,8 @@ class GenresController < ApplicationController
   def update
     respond_to do |format|
       if @genre.update(genre_params)
-        format.html { redirect_to @genre, notice: 'Genre was successfully updated.' }
-        format.json { render :show, status: :ok, location: @genre }
+        format.html { redirect_to genres_url, notice: 'Genre was successfully updated.' }
+        format.json { render :show, status: :ok, location: genres_url }
       else
         format.html { render :edit }
         format.json { render json: @genre.errors, status: :unprocessable_entity }
@@ -70,6 +69,6 @@ class GenresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def genre_params
-      params.require(:genre).permit(:title)
+      params.require(:genre).permit(:title, :cover)
     end
 end

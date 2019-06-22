@@ -1,3 +1,112 @@
 // Place all the styles related to the Genres controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.genre_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  width: 1110px;
+  margin: 80px auto;
+  // background-color: #FAFAFA;
+  overflow: hidden;
+}
+
+.genre_index_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  width: 1110px;
+  margin: 20px auto;
+  // background-color: #FAFAFA;
+  overflow: hidden;
+}
+
+.genre_icon {
+  width: 95px;
+  height: 87px;
+}
+
+#collection {
+  display: block;
+  margin-bottom: 30px;
+  position: relative;
+  width: 350px;
+  height: 392px;
+  background-color: antiquewhite;
+}
+
+#collection_cover {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#collection_cover img {
+  width: 350px;
+  height: 392px;
+  border-radius: 6px;
+}
+
+#collection_title {
+  position: absolute;
+
+  font-family: Avenir-Black;
+  font-size: 36px;
+  line-height: 46px;
+  text-transform: capitalize;
+  padding-bottom: 46px;
+  color: white;
+  letter-spacing: 0;
+  overflow: hidden;
+}
+
+#collection_header {
+  display: flex;
+  width: 100%;
+}
+
+.collection_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // align-items: center;
+  margin: 0 auto;
+  // width: 267px;
+  // width: 227px;
+}
+
+#collection_h1 {
+  font-family: Avenir-Heavy;
+  font-size: 36px;
+  // line-height: 46px;
+  text-transform: capitalize;
+  padding-right: 30px;
+  color: white;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.genre_cover img {
+  width: 255px;
+  height: 392px;
+  border-radius: 6px;
+}
+
+.genre_pic {
+  margin: 0 auto;
+  padding: 25px 30px;
+}
+
+.genre_pic img {
+  margin: 0 auto;
+  width: 95px;
+  height: 100px;
+  border-radius: 6px
+}

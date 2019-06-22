@@ -1,3 +1,351 @@
-// Place all the styles related to the comics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// comics #index
+
+.comic_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1110px;
+  margin: 0 auto;
+  overflow: hidden;
+  // background-color: green;
+
+  &::after {
+  content: '';
+  // margin-left: 540px;
+  margin: 125px;
+  }
+}
+
+.comic {
+  display: block;
+  padding-bottom: 30px;
+}
+
+.comic_cover img {
+  width: 255px;
+  height: 392px;
+  border-radius: 6px;
+  border: none;
+}
+
+#comic_show_cover img, input#comic_cover {
+  width: 315px;
+  height: 484px;
+  margin-top: -20px;
+  border-radius: 6px;
+  border: none;
+}
+
+input#comic_cover {
+  opacity: 0;
+}
+
+.comic_title {
+  // width: 255px;
+  width: 100%;
+  font-family: Avenir-Black;
+  font-size: 24px;
+  line-height: 31px;
+  padding: 18px 0 9px;
+  color: #131415;
+  letter-spacing: 0;
+  overflow: hidden;
+}
+
+.comic_author {
+  font-family: Avenir-Medium;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0px 0 10px;
+  // color: white;
+  color: #131415;
+  letter-spacing: 0;
+}
+
+.comic_genre {
+  font-family: Avenir-Roman;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 18px;
+  padding-bottom: 10px;
+  color: #131415;
+  opacity: .5;
+  letter-spacing: 0.3px;
+}
+
+.comic_description {
+  font-family: Avenir-Roman;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 30px 0 10px;
+  color: #131415;
+  letter-spacing: 0;
+  margin-top: 30px;
+  width: 430px;
+}
+
+.edit_comic_description {
+  font-family: Avenir-Roman;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 30px 0 5px;
+  color: #131415;
+  letter-spacing: 0;
+  margin-top: 30px;
+  width: 430px;
+}
+
+#profile_description {
+  font-family: Avenir-Roman;
+  font-size: 14px;
+  line-height: 18px;
+  height: 100px;
+  padding: 0px 0 10px;
+  color: #131415;
+  letter-spacing: 0;
+}
+
+.button {
+  display: block;
+  position: relative;
+  margin-right: 10px;
+}
+
+
+// comics #show
+.comic_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#comic_header {
+  display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+  margin: 80px auto;
+}
+
+// .comic_cover {
+//   margin: 0 auto;
+//   padding: 25px 30px;
+// }
+//
+#comic_page  {
+  color: white;
+  text-align: left;
+}
+
+.comic_info {
+  // padding: 10px 40px;
+
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+#comic_info {
+  // width: 100vw;
+  width: 100%;
+  color: #fefefe;
+  text-align: left;
+}
+
+#comic_page_description {
+  // margin-top: 40px;
+  // margin-top: 30px;
+  // width: 430px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  // width: 180px;
+}
+
+.action_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.read_button, .create_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  width: 130px;
+  height: 32px;
+  background-color: #AD52FF;
+  border-radius: 20px;
+
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+}
+
+.update_button input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  width: 130px;
+  height: 32px;
+  background-color: #AD52FF;
+  border-radius: 20px;
+  border: none;
+
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+}
+
+.create_button input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 32px;
+  background-color: #AD52FF;
+  border-radius: 20px;
+  border: none;
+
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+}
+
+.back_button {
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: #89898A;
+  text-align: left;
+}
+
+// comics #edit form
+
+// comics #new form
+
+.comic_form_wrapper {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_comic_form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  background-color: red;
+}
+
+.new_comic_form h2 {
+  font-family: Avenir-Heavy;
+  font-size: 32px;
+  line-height: 41px;
+  // width: 50%;
+  color: black;
+  letter-spacing: 0;
+}
+
+.cover, .title, .genre, .description {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  background-color: cyan;
+}
+
+// create new comic
+
+#upload_comic_cover {
+  width: 315px;
+  height: 484px;
+  margin-top: -20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #D8D8D8;
+  border-radius: 6px;
+}
+
+#upload_comic_cover div {
+	font-family: Avenir-Medium;
+	font-size: 16px;
+	line-height: 22px;
+	margin: 0 auto;
+	color: red;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#comic_page_description h2 {
+  font-family: Avenir-Heavy;
+  font-size: 21px;
+  line-height: 27px;
+  margin: 0 auto;
+  // padding: 50px 0 10px;
+  color: #131415;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+h1 input {
+  width: 100%;
+  // height: 30px;
+  border: none;
+  background-color: #131415;
+
+  font-family: Avenir-Heavy;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: 0;
+  // margin: 10px auto;
+  // padding: 50px 0 10px;
+  color: white;
+  overflow: hidden;
+
+  &:focus {
+    outline-offset: 0;
+    border: none
+  }
+}
+
+textarea .edit_comic_description {
+  font-family: Avenir-Roman;
+  font-size: 16px;
+  line-height: 24px;
+  width: 430px;
+  height: 170px;
+  color: #131415;
+  letter-spacing: 0;
+  overflow: hidden;
+  border: none;
+  resize: none;
+}
+
+form .submit {
+  background-color: red;
+}

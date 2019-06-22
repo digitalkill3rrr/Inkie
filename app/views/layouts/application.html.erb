@@ -13,20 +13,35 @@
 
   <body>
     <nav>
-      <div>
-        <%= link_to 'Comics', comics_url %>
-        <%= link_to 'Genres', genres_url %>
-        <%= link_to 'Users', users_index_url if can? :index, User %>
-      </div>
+      <div class="navbar">
+        <div class="logo"><%= link_to 'Inkie', comics_url %></div>
+        <div class="menu_center">
+          <div class="nav_button"><%= link_to 'Comics', comics_url %></div>
+          <div class="nav_button"><%= link_to 'Genres', genres_url %></div>
+          <%#= link_to 'Users', users_index_url if can? :index, User %>
 
-      <div>
-        <% if user_signed_in? %>
-          <%= current_user.email %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Register', new_user_registration_path %>
-          <%= link_to 'Login', new_user_session_path %>
-        <% end %>
+          <div class="new_comic_button">
+            <% if can? :create, Comic %>
+              <%= link_to 'Create Comic', new_comic_path %>
+            <% else %>
+              <%= link_to 'Create Comic', new_user_registration_path %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="profile">
+          <% if user_signed_in? %>
+            <%#= current_user.email %>
+            <div class="profile_link">
+              <%#= image_tag current_user.userpic %>
+              <%= link_to current_user.nickname, profile_index_url if can? :index, User %>
+            </div>
+            <%#= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Register', new_user_registration_path %>
+            <%= link_to 'Login', new_user_session_path %>
+          <% end %>
+        </div>
       </div>
     </nav>
 

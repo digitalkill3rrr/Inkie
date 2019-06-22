@@ -1,4 +1,170 @@
-nav {
+body {
+  overflow-x: hidden;
+}
+
+body nav {
+  position: fixed;
   display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 80px;
+  // margin: 20px auto;
+  background-color: #131415;
+  z-index: 99;
+
+  // display: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
   justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+}
+
+.nav_button {
+  font-family: Avenir-Roman;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fefefe;
+  letter-spacing: 0;
+}
+
+.profile {
+  font-family: Avenir-Roman;
+  font-size: 14px;
+  line-height: 18px;
+  color: #B8B8B9;
+  letter-spacing: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.new_comic_button {
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 18px;
+  color: #AD52FF;
+  letter-spacing: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  // align-items: center;
+}
+
+.section_title {
+  display: block;
+  width: 1110px;
+  font-family: Avenir-Black;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: left;
+  text-transform: capitalize;
+  padding: 70px 0 40px;
+  color: #111111;
+  letter-spacing: 0;
+}
+
+.index_section_title {
+  display: block;
+  width: 1110px;
+  font-family: Avenir-Black;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: left;
+  text-transform: capitalize;
+  padding-bottom: 40px;
+  color: #111111;
+  letter-spacing: 0;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 370px;
+  padding: 110px 320px;
+  background-color: #131415;
+}
+
+.header h1 {
+  font-family: Avenir-Heavy;
+  font-size: 40px;
+  line-height: 52px;
+  // width: 50%;
+  margin: 0 auto;
+  padding: 50px 0 10px;
+  color: white;
+  letter-spacing: 0;
+  text-align: center;
+  // overflow: hidden;
+
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.header h2 {
+  font-family: Avenir-Heavy;
+  font-size: 21px;
+  line-height: 27px;
+  margin: 0 auto;
+  // padding: 50px 0 10px;
+  color: white;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+.header p {
+  font-family: Avenir-Medium;
+  font-size: 21px;
+  line-height: 27px;
+  font-style: oblique;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  background-image: url(logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  font-family: Avenir-Black;
+  font-size: 18px;
+  line-height: 23px;
+  color: white;
+  letter-spacing: 0;
+  padding: 11px 55px;
+  width: 0px;
+}
+
+.menu_center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  // width: 220px;
+  width: 250px
+  // margin: 0 80px 0 0;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
 }

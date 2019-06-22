@@ -1,34 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div class="header">
+    <div class="comic_container">
+      <div id="comic_header">
+        <div id="comic_show_cover" class="comic_cover"><%= image_tag @comic.cover.url %></div>
+        <div class="comic_info">
+          <h1 id="comic_info" class="comic_title"><%= @comic.title %></h1>
+          <div id="comic_info" class="comic_author"><%= @comic.user.nickname %></div>
+          <div id="comic_page_description" class="comic_description" ><%= @comic.description %></div>
 
-<div>
-  <%= image_tag(@comic.cover.url) if @comic.cover? %>
+          <div class="buttons">
+            <div class="read_button"><%= link_to 'Read comic', comic_story_path(0) %></div>
+            <div class="back_button"><%= link_to 'Back', comics_path %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<p>
-  <strong>Title:</strong>
-  <%= @comic.title %>
-</p>
-
-<p>
-  <strong>Creator:</strong>
-  <%= @comic.user.nickname %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @comic.genre.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @comic.description %>
-</p>
-
-
-<%= link_to 'Read comic',comic_story_path(1) %>
-
-<% if can? :update, Comic %>
-  <%= link_to 'Edit', edit_comic_path(@comic) %>
-<% end %>
-
-<%= link_to 'Back', comics_path %>

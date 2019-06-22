@@ -1,42 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div class="header">
+    <h1>Explore the best interactive comics in the world</h1>
+  </div>
 
-<h1>Comics</h1>
+  <div class="comic_wrapper">
+    <div class="section_title">
+      <h1>Comics</h1>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <!-- <th>Cover</th> -->
-      <th>Creator</th>
-      <th>Genre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @comics.each do |comic| %>
-      <tr>
-        <td><%= link_to comic.title, comic %></td>
-        <td><%#= comic.cover %></td>
-        <td><%= comic.user.nickname %></td>
-        <td><%= comic.genre.title %></td>
-        <td>
-          <% if can? :update, Comic %>
-            <%= link_to 'Edit', edit_comic_path(comic) %>
-          <% end %>
-        </td>
-        <td>
-          <% if can? :destroy, Comic %>
-            <%= link_to 'Destroy', comic, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-      </td>
-      </tr>
+      <div class="comic">
+        <div class="comic_cover"><%= image_tag comic.cover.url %></div>
+        <div class="comic_title"><%= link_to comic.title, comic %></div>
+        <div class="comic_author"><%= comic.user.nickname %></div>
+        <div class="comic_genre"><%= link_to comic.genre.title, comic.genre %></div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <div class="genre_index_wrapper">
+    <div class="index_section_title">
+      <h1>Genres</h1>
+    </div>
 
-<% if can? :create, Comic %>
-  <%= link_to 'New Comic', new_comic_path %>
-<% end %>
+    <% @genres.each do |genre| %>
+      <div id="collection" class="genre">
+        <div id="collection_cover" class="genre_cover">
+          <div id="collection_title" class="genre_title"><%= link_to genre.title, genre %></div>
+          <%= image_tag genre.cover.url %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

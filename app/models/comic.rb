@@ -5,5 +5,5 @@ class Comic < ApplicationRecord
 
   mount_uploader :cover, CoverUploader
 
-  validates :user_id, :cover, :title, :genre_id, presence: true
+  validates :user_id, :cover, :title, :genre_id, :description, presence: true
 end

@@ -9,9 +9,11 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.role == 'admin'
         can :manage, :all
+        cannot [:destroy], Genre
         cannot [:create, :update, :destroy], Comic
       elsif user.role == 'logged user'
-        can :manage, :all
+        can :read, :all
+        can [:create, :update, :destroy], Comic, :user_id => user.id
         cannot [:create, :update, :destroy], Genre
         cannot [:create, :update, :destroy], User
         # cannot :index, User
