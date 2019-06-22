@@ -1,23 +1,24 @@
 <div class="wrapper">
   <div class="header">
     <div class="comic container">
-      <div id="comic_header">
-        <%= form_with(model: comic, local: true) do |form| %>
-          <div id="upload_comic_cover" class="comic_cover">
-            <%= form.file_field :cover, :placeholder => 'Name your comic' %>
-          </div>
-          <div id="comic_info" class="comic_info">
-            <h1 id="comic_info" class="comic_title"><%= form.text_field :title, :placeholder => 'Name your comic' %></h1>
-            <div id="comic_info" class="comic_genre"><%= select_tag @genre, options_for_select(Genre.all.collect{|g| [g.title, g.id]}), :include_blank => "Select genre" %></div>
-
-            <div id="comic_page_description" class="edit_comic_description"><%= form.text_area :description, :placeholder => 'Describe your comic in just 300 symbols. Good luck!', :maxlength => 300 %></div>
+      <div class="comic_header">
+        <div id="comic_header">
+          <%= form_with(model: comic, local: true) do |form| %>
+            <div id="upload_comic_cover" class="comic_cover">
+              <%= form.file_field :cover %>
+            </div>
+            <div id="comic_info" class="comic_info">
+              <h1 id="comic_info" class="comic_title"><%= form.text_field :title, :placeholder => 'Name your comic' %></h1>
+              <div id="comic_info" class="comic_genre"><%= select("comic", "genre_id", Genre.all.collect {|g| [ g.title, g.id ] }, :include_blank => "Select genre") %></div>
+              <div id="comic_page_description" class="comic_description"><%= form.text_area :description, :placeholder => 'Describe your comic in just 300 symbols. Good luck!', :maxlength => 300 %>
+            </div>
 
             <div class="action_buttons">
-              <div class="update_button"><%= form.submit %></div>
+              <div class="create_button"><%= form.submit %></div>
               <div class="back_button"><%= link_to 'Cancel', profile_index_path %></div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
