@@ -1,8 +1,12 @@
 .M_Text {
   position: absolute;
   // border: 2px solid red;
-  font-size: 120px;
-  line-height: 95px;
+  font-size: 60px;
+  line-height: 60px;
   font-family: Druk-Medium;
   letter-spacing: 1px;
+  transition: .3s ease-in;
+  transition-property: opacity;
+  color: black;
+
 }

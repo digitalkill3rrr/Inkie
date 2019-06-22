@@ -67,6 +67,10 @@ export default class O_Frame extends React.Component {
       styles.backgroundColor = '#' + this.props.frame.background_color
     }
 
+    if (this.props.frame.z_index) {
+      styles.z_index = this.props.frame.z_index
+    }
+
     return(
       <div
         className="O_Frame"

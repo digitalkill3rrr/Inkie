@@ -22,14 +22,15 @@ export default class T_ComicsViewerContainer extends React.Component {
 
   componentDidMount() {
     this.setState ({
-      width: document.getElementsByClassName('T_ComicsViewerContainer')[0].offsetWidth
+      // width: document.getElementsByClassName('T_ComicsViewerContainer')[0].offsetWidth
+      width: this.props.frames[this.props.frames.length - 1].left + this.props.frames[this.props.frames.length - 1].width - window.screen.width + 120
     })
 
   }
 
   handleWheel(e){
-    console.log(this.state.width);
     let localDeltaY = this.state.translateX - e.deltaY
+    // console.log(this.state.width, localDeltaY);
 
     if (0 < localDeltaY) {
       this.setState({
@@ -79,7 +80,7 @@ export default class T_ComicsViewerContainer extends React.Component {
       styles.height = this.state.width + window.screen.width
     }
 
-    // console.log(styles);
+    // console.log(this.state.width);
 
     return(
       <div className="T_ComicsViewerContainer"
