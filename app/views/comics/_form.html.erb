@@ -1,37 +1,48 @@
-<%= form_with(model: comic, local: true) do |form| %>
-  <% if comic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comic.errors.count, "error") %> prohibited this comic from being saved:</h2>
+<div class="wrapper">
 
-      <ul>
-      <% comic.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <div class="header">
+      <%= form_with(model: comic, local: true) do |form| %>
+      <% if comic.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(comic.errors.count, "error") %> prohibited this comic from being saved:</h2>
+
+        <ul>
+          <% comic.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-      </ul>
+
+
+      <div class="comic container">
+        <div id="comic_header">
+          <div id="upload_comic_cover" class="comic_cover">
+            <div class="file_field"><%= form.file_field :cover %></div>
+          </div>
+
+          <div id="comic_info" class="comic_info">
+            <div class="comic_title">
+              <h2><%#= form.label :title %></h2>
+              <h2><%= form.text_field :title, :placeholder => 'Name your comic' %></h2>
+            </div>
+
+            <div class="comic_title">
+              <h2><%= form.label :genre_id %></h2>
+              <div><%= select("comic", "genre_id", Genre.all.collect {|g| [ g.title, g.id ] }) %></div>
+            </div>
+
+            <div id="comic_page_description" class="comic_description">
+              <h2><%#= form.label :description %></h2>
+              <div class="textarea"><%= form.text_area :description, :placeholder => 'Describe your comic in just 300 symbols. Good luck!', :maxlength => 300 %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="actions">
+      <%#= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :cover %>
-    <%= form.file_field :cover %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :genre_id %>
-    <%= select("comic", "genre_id", Genre.all.collect {|g| [ g.title, g.id ] }) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

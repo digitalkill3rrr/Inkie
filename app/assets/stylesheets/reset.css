@@ -42,10 +42,33 @@ table {
 	border-spacing: 0;
 }
 
+/* input {
+  width: 200px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1f1f1f;
+
+  font-family: Avenir-Roman;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  margin: 10px auto;
+  color: white;
+  padding: 10px;
+} */
+
 input:focus {
   outline-offset: 0;
+	/* border: 1px solid #29B0D9; */
+	border: 1px solid #AD52FF;
+	border-spacing: 1px;
 }
 
 :focus {
   outline: -webkit-focus-ring-color auto 0px;
+}
+
+textarea {
+	width: 430px;
 }

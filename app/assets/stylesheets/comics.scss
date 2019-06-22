@@ -5,33 +5,44 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
   align-items: center;
   width: 1110px;
   margin: 0 auto;
   overflow: hidden;
   // background-color: green;
+
+  &::after {
+  content: '';
+  margin-left: 540px;
+  }
 }
 
 .comic {
   display: block;
   padding-bottom: 40px;
-  position: relative;
 }
 
-.comic_cover img {
-  display: block;
-  width: 255px;
-  height: 392px;
+.comic_cover img, #upload_comic_cover {
+  width: 315px;
+  height: 484px;
+  // margin-top: -50px;
   border-radius: 6px;
 }
 
+// #comic_cover img {
+//   width: 315px;
+//   height: 484px;
+//   // margin: -70px 0px;
+//   margin-top: -50px;
+// }
+
 .comic_title {
-  width: 255px;
+  // width: 255px;
+  width: 100%;
   font-family: Avenir-Black;
   font-size: 24px;
   line-height: 31px;
-  padding: 18px 0 10px;
+  padding: 18px 0 9px;
   color: #131415;
   letter-spacing: 0;
   overflow: hidden;
@@ -39,28 +50,29 @@
 
 .comic_author {
   font-family: Avenir-Medium;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 16px;
+  line-height: 20px;
   padding: 0px 0 10px;
+  // color: white;
   color: #131415;
   letter-spacing: 0;
 }
 
 .comic_genre {
-  font-family: Avenir-Medium;
+  font-family: Avenir-Roman;
   text-transform: uppercase;
   font-size: 13px;
   line-height: 18px;
   padding: 0px 0 10px;
   color: #131415;
   opacity: .5;
-  letter-spacing: 0;
+  letter-spacing: 0.3px;
 }
 
 .comic_description {
   font-family: Avenir-Roman;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 24px;
   width: 400px;
   padding: 20px 0 10px;
   color: #131415;
@@ -85,11 +97,18 @@
 
 
 // comics #show
+.comic_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
 
 #comic_header {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  // flex-direction: row;
+  // justify-content: center;
   margin: 80px auto;
 }
 
@@ -104,24 +123,37 @@
 }
 
 .comic_info {
-  padding: 0 40px;
+  // padding: 0 40px;
+  padding: 10px 40px;
 }
 
-.comic_info h1 {
-  width: 100vw;
+#comic_info {
+  // width: 100vw;
+  width: 100%;
   color: #fefefe;
   text-align: left;
 }
 
 #comic_page_description {
-  margin-top: 40px;
+  // margin-top: 40px;
+  margin-top: 30px;
+  width: 430px;
+}
+
+.buttons {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 180px;
 }
 
 .read_button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  // margin-top: 20px;
   width: 130px;
   height: 32px;
   background-color: #AD52FF;
@@ -134,4 +166,110 @@
   text-align: center;
 }
 
+.back_button {
+  font-family: Avenir-Medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: #89898A;
+  text-align: center;
+}
+
 // comics #edit form
+
+// comics #new form
+
+.comic_form_wrapper {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_comic_form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  background-color: red;
+}
+
+.new_comic_form h2 {
+  font-family: Avenir-Heavy;
+  font-size: 32px;
+  line-height: 41px;
+  // width: 50%;
+  color: black;
+  letter-spacing: 0;
+}
+
+.cover, .title, .genre, .description {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  background-color: cyan;
+}
+
+// create new comic
+
+#upload_comic_cover {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // width: 255px;
+  // height: 392px;
+  // border-radius: 6px;
+  background-color: #D8D8D8;
+}
+
+#comic_page_description h2 {
+  font-family: Avenir-Heavy;
+  font-size: 21px;
+  line-height: 27px;
+  margin: 0 auto;
+  // padding: 50px 0 10px;
+  color: #131415;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+h2 input {
+  width: 100%;
+  // height: 30px;
+  border: none;
+  background-color: #131415;
+
+  font-family: Avenir-Heavy;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: 0;
+  // margin: 10px auto;
+  padding: 50px 0 10px;
+  color: white;
+  overflow: hidden;
+
+  &:focus {
+    outline-offset: 0;
+    border: none
+  }
+}
+
+div textarea {
+  font-family: Avenir-Roman;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  height: 170px;
+  color: #131415;
+  letter-spacing: 0;
+  overflow: hidden;
+  border: none;
+  resize: none;
+}

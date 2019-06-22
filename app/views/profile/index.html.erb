@@ -20,11 +20,11 @@
     </div>
   </div>
 
-  <div class="section_title">
-    <h1>My comics</h1>
-  </div>
-
   <div class="comic_wrapper">
+    <div class="section_title">
+      <h1>My comics</h1>
+    </div>
+    
     <% @user.comics.each do |c| %>
       <div class="comic">
         <div class="comic_cover"><%= image_tag c.cover.url %></div>

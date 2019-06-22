@@ -1,17 +1,24 @@
 <div class="wrapper">
 
   <div class="header">
-    <div id="comic_header">
-      <div id="comic_page" class="comic_cover"><%= image_tag @comic.cover.url %></div>
-      <div class="comic_info">
-        <h1 class="comic_title"><%= @comic.title %></h1>
-        <div id="comic_page" class="comic_author"><%= @comic.user.nickname %></div>
-        <div id="comic_page_description" class="comic_description"><%= @comic.description %></div>
+    <div class="comic_container">
+      <div id="comic_header">
+        <div id="comic_cover" class="comic_cover"><%= image_tag @comic.cover.url %></div>
+        <div class="comic_info">
+          <h1 id="comic_info" class="comic_title"><%= @comic.title %></h1>
+          <div id="comic_info" class="comic_author"><%= @comic.user.nickname %></div>
+          <div id="comic_page_description" class="comic_description"><%= @comic.description %></div>
 
-        <div class="read_button"><%= link_to 'Read comic',comic_story_path(0) %></div>
+          <div class="buttons">
+            <div class="read_button"><%= link_to 'Read comic', comic_story_path(0) %></div>
+            <div class="back_button"><%= link_to 'Back', comics_path %></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
 
   <div class="comic_wrapper">
     <!-- <div class="comic_cover"> -->
