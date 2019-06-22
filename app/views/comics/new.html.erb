@@ -1,14 +1,13 @@
-<div class="wrapper">
-  <h1>New Comic</h1>
 
-  <% if can? :create, Comic %>
-      <%= render 'form', comic: @comic %>
-    <% else %>
+<!-- <h1>New Comic</h1> -->
 
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <%#= link_to 'Register', new_user_registration_path %>
-      <%#= link_to 'Login', new_user_session_path %>
-  <% end %>
+<% if can? :create, Comic %>
+    <%= render 'form', comic: @comic %>
+  <% else %>
 
-  <%#= link_to 'Back', comics_path %>
-</div>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%#= link_to 'Register', new_user_registration_path %>
+    <%#= link_to 'Login', new_user_session_path %>
+<% end %>
+
+<%#= link_to 'Back', comics_path %>

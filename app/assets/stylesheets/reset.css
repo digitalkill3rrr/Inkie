@@ -43,19 +43,20 @@ table {
 }
 
 /* input {
-  width: 200px;
-  height: 30px;
-  border-radius: 6px;
-  border: none;
-  background-color: #1f1f1f;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 130px;
+  height: 32px;
+  background-color: #AD52FF;
+  border-radius: 20px;
 
-  font-family: Avenir-Roman;
+  font-family: Avenir-Medium;
   font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0;
-  margin: 10px auto;
+  line-height: 20px;
   color: white;
-  padding: 10px;
+  text-align: center;
 } */
 
 input:focus {
@@ -70,5 +71,20 @@ input:focus {
 }
 
 textarea {
-	width: 430px;
+	font-family: Avenir-Roman;
+	font-size: 16px;
+	line-height: 24px;
+	width: 100%;
+	height: 170px;
+	color: #131415;
+	letter-spacing: 0;
+	overflow: hidden;
+	border: none;
+	resize: none;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
