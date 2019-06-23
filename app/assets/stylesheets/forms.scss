@@ -12,7 +12,7 @@
   align-items: center;
   background-color: #131415;
 
-  padding: 170px 300px;
+  padding: 140px 300px;
 }
 
 .form_wrapper h2 {
@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.email, .password {
+.email, .password, .nickname {
   padding-bottom: 10px;
 }
 
@@ -53,14 +53,14 @@ form#new_user.new_user {
   flex-direction: column;
 }
 
-.email, .password {
+.email, .password, .nickname {
   font-family: Avenir-Medium;
   font-size: 14px;
   line-height: 20px;
   color: #dedede;
 }
 
-.password input, .email input {
+.password input, .email input, .nickname input {
   width: 200px;
   height: 30px;
   border-radius: 6px;

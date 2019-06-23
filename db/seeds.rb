@@ -6,29 +6,29 @@ Rake::Task['db:migrate'].invoke
 # Create users
 
 # Fake userpic uploader
-def upload_fake_userpic
-  uploader = UserpicUploader.new(User.new, :userpic)
-  # uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/user/userpics', '*')).sample))
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/user/userpics', '*')).sample))
-  uploader
-end
+# def upload_fake_userpic
+#   uploader = UserpicUploader.new(User.new, :userpic)
+#   # uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/user/userpics', '*')).sample))
+#   uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/user/userpics', '*')).sample))
+#   uploader
+# end
 
 @users = [
   {
     email:    'admin@admin.com',
     role:     'admin',
     nickname: 'Admin Rules',
-    userpic:  upload_fake_userpic
+    # userpic:  upload_fake_userpic
   },{
     email:    'user1@user.com',
     role:     'logged user',
     nickname: 'Regular Mfk',
-    userpic:  upload_fake_userpic
+    # userpic:  upload_fake_userpic
   },{
     email:    'user2@user.com',
     role:     'logged user',
     nickname: 'Us3r Userovich',
-    userpic:  upload_fake_userpic
+    # userpic:  upload_fake_userpic
   }
 ]
 
@@ -39,7 +39,7 @@ def create_users(user)
     email:                 user[:email],
     role:                  user[:role],
     nickname:              user[:nickname],
-    userpic:               user[:userpic],
+    # userpic:               user[:userpic],
     password:              password,
     password_confirmation: password
   )
