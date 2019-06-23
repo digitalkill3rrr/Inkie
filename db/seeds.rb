@@ -8,7 +8,8 @@ Rake::Task['db:migrate'].invoke
 # Fake userpic uploader
 def upload_fake_userpic
   uploader = UserpicUploader.new(User.new, :userpic)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/user/userpics', '*')).sample))
+  # uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/user/userpics', '*')).sample))
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/user/userpics', '*')).sample))
   uploader
 end
 
@@ -53,7 +54,8 @@ end
 # Fake genre covers
 def upload_fake_genre_cover
   uploader = GenreCoverUploader.new(Genre.new, :cover)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/genre/covers', '*')).sample))
+  # uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/genre/covers', '*')).sample))
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/genre/covers', '*')).sample))
   uploader
 end
 
@@ -97,7 +99,8 @@ end
 # Fake comic covers
 def upload_fake_comic_cover
   uploader = CoverUploader.new(Comic.new, :cover)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/comic/covers', '*')).sample))
+  # uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/uploads/comic/covers', '*')).sample))
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/comic/covers', '*')).sample))
   uploader
 end
 
