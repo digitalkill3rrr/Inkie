@@ -21,12 +21,12 @@ Rake::Task['db:migrate'].invoke
     # userpic:  upload_fake_userpic
   },{
     email:    'user1@user.com',
-    role:     'logged user',
+    role:     'user',
     nickname: 'Regular Mfk',
     # userpic:  upload_fake_userpic
   },{
     email:    'user2@user.com',
-    role:     'logged user',
+    role:     'user',
     nickname: 'Us3r Userovich',
     # userpic:  upload_fake_userpic
   }

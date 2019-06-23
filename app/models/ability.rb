@@ -11,7 +11,7 @@ class Ability
         can :manage, :all
         cannot [:destroy], Genre
         cannot [:create, :update, :destroy], Comic
-      elsif user.role == 'logged user'
+      elsif user.role == 'user'
         can :read, :all
         can [:create, :update, :destroy], Comic, :user_id => user.id
         cannot [:create, :update, :destroy], Genre
