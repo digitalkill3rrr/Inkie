@@ -6,7 +6,7 @@ class ComicsController < ApplicationController
   # GET /comics
   # GET /comics.json
   def index
-    @comics = Comic.all
+    @comics = Comic.all.sort_by { |c| [c.created_at, c.updated_at].max }.reverse!
     @genres = Genre.all
 
     # Shows comics of current_user only

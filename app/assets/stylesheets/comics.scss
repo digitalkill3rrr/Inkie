@@ -9,12 +9,14 @@
   width: 1110px;
   margin: 0 auto;
   overflow: hidden;
+  align-self: flex-start;
   // background-color: green;
 
   &::after {
   content: '';
-  // margin-left: 540px;
-  margin: 125px;
+  // width: 49%;
+  margin-left: 540px;
+  // margin: 125px;
   }
 }
 
