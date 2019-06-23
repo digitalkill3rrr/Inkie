@@ -82,6 +82,11 @@ textarea {
 	border: none;
 	resize: none;
   padding: 0;
+	opacity: 0.5;
+}
+
+textarea:focus{
+	opacity: 1;
 }
 
 form {

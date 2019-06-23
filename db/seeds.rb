@@ -154,6 +154,12 @@ end
     cover:    upload_fake_comic_cover,
     user_id:  User.all.sample.id,
     description: @descriptions.sample
+  },{
+    title:    "Meditation",
+    genre_id: 3,
+    cover:    File.open(File.join(Rails.root,"lib/assets/comic/real_comic.png")),
+    user_id:  User.all.sample.id,
+    description: @descriptions.sample
   }
 ]
 

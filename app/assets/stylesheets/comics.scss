@@ -328,10 +328,12 @@ h1 input {
   // padding: 50px 0 10px;
   color: white;
   overflow: hidden;
+  opacity: 0.5;
 
   &:focus {
     outline-offset: 0;
-    border: none
+    border: none;
+    opacity: 1;
   }
 }
 
